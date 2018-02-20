@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Button from 'material-ui/RaisedButton';
 import Link from 'next/link';
-import MenuItem from 'material-ui/MenuItem';
 import Wrapper from 'components/Wrapper';
 
 export default class Home extends Component {

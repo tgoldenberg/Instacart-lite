@@ -21,7 +21,28 @@ div, body, html {
   width: 100%;
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.6);
+  // background-image: url("https://d2nkqaulr5muje.cloudfront.net/assets/applicants/landing_page/landing_page_bg-min-2dbf0751ab4e800d44d6981383d7ce4677046bf412bdc3fd41a822b3d18c1a0b.jpg");
+  // -webkit-background-size: cover;
+  // -moz-background-size: center cover;
+  // background-size: cover;
+  // background-position: center top;
   padding-bottom: 5rem;
+}
+
+.outside-container::after {
+  content: "";
+  background: url("https://d2nkqaulr5muje.cloudfront.net/assets/applicants/landing_page/landing_page_bg-min-2dbf0751ab4e800d44d6981383d7ce4677046bf412bdc3fd41a822b3d18c1a0b.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: center cover;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .content-container {

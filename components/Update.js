@@ -35,13 +35,6 @@ export default class Home extends Component {
   }
   async handleSubmit() {
     let { firstName, lastName, email, phoneNumber, region, age } = this.state;
-    let newState = {};
-    if (!firstName) {
-      newState["firstNameError"] = "Must provide a valid first name";
-    }
-    // TODO: add more validation
-    this.setState(newState);
-
     let user = { firstName, lastName, email, phoneNumber, region, age };
     localStorage.setItem('unsaved_user', JSON.stringify(user));
     Router.push('/confirm');

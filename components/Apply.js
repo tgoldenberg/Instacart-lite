@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
 import Button from 'material-ui/RaisedButton';
-import Link from 'next/link';
-import MenuItem from 'material-ui/MenuItem';
 import Router from 'next/router';
 import TextField from 'material-ui/TextField';
 import Wrapper from 'components/Wrapper';
-import axios from 'axios';
 
 export default class Home extends Component {
   constructor(props) {
@@ -31,9 +28,13 @@ export default class Home extends Component {
   handleChange(val, field) {
     let newState = {};
     newState[field] = val;
+    if (val.length > 0) {
+      newState[field + 'Error'] = '';
+    }
     this.setState(newState);
   }
-  async handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     let { firstName, lastName, email, phoneNumber, region, age } = this.state;
     let newState = {};
     if (!firstName) {
@@ -71,7 +72,7 @@ export default class Home extends Component {
               <h1>Sign Up</h1>
             </div>
             <br />
-            <section className="flex-column form-container">
+            <form className="flex-column form-container" onSubmit={this.handleSubmit}>
               <div className="input-container">
                 <TextField
                   className="text-field"
@@ -128,9 +129,20 @@ export default class Home extends Component {
                 />
               </div>
               <section className="flex">
-                <Button label="SUBMIT" onClick={this.handleSubmit} />
-            </section>
-            </section>
+                <Button
+                  label="SUBMIT"
+                  onClick={this.handleSubmit}
+                  style={{ opacity: (
+                    this.state.firstNameError.length === 0 ||
+                    this.state.lastNameError.length === 0 ||
+                    this.state.regionError.length === 0 ||
+                    this.state.emailError.length === 0 ||
+                    this.state.phoneNumberError.length === 0 ||
+                    this.state.ageError.length === 0
+                  ) ? 0.5 : 1 }}
+                />
+              </section>
+            </form>
           </section>
         </div>
       </Wrapper>

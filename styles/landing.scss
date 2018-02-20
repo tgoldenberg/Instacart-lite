@@ -16,8 +16,40 @@ div, body, html {
   align-items: center;
 }
 
+.outside-container {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  padding-bottom: 5rem;
+}
+
+.content-container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content-container.apply {
+  justify-content: flex-start;
+}
+
 h1 {
   color: white;
   font-family: helvetica;
   font-size: 40px;
+}
+
+h4 {
+  color: white;
+  font-family: helvetica;
+  font-size: 30px;
+}
+
+.form-container {
+  width: 75%;
+  background: white;
+  height: 100%;
+  padding: 1rem;
 }

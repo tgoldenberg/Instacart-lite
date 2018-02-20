@@ -18,6 +18,12 @@ nextApp.prepare().then(() => {
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use(bodyParser.json());
 
+  server.post('/submit-application', (req, res) => {
+    console.log(req.body);
+    // TODO: create JSON web token to parse on client side
+    res.status(200).send({ user: req.body });
+  });
+
   server.get('*', (req, res) => {
     return nextHandle(req, res);
   });

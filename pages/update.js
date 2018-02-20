@@ -6,7 +6,7 @@ export default class Page extends Component {
   }
   render() {
     return (
-      <div>LANDING</div>
+      <div>UPDATE</div>
     )
   }
 }
